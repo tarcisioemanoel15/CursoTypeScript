@@ -11,8 +11,12 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "validator": "^13.7.0"
+  },
   "devDependencies": {
+    "@types/node": "^17.0.34",
+    "@types/validator": "github:types/validator",
     "@typescript-eslint/eslint-plugin": "^5.16.0",
     "@typescript-eslint/parser": "^5.16.0",
     "eslint": "^8.12.0",

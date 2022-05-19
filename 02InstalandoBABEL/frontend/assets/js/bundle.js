@@ -2,14 +2,15 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/mod.ts":
-/*!********************!*\
-  !*** ./src/mod.ts ***!
-  \********************/
+/***/ "./src/formulario.ts":
+/*!***************************!*\
+  !*** ./src/formulario.ts ***!
+  \***************************/
 /***/ (() => {
 
 
 console.log('hello world');
+alert('.ts');
 
 
 /***/ })
@@ -50,7 +51,7 @@ var exports = __webpack_exports__;
   \**********************/
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-__webpack_require__(/*! ./mod */ "./src/mod.ts");
+__webpack_require__(/*! ./formulario */ "./src/formulario.ts");
 
 })();
 
