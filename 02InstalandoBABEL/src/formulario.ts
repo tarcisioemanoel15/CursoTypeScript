@@ -1,4 +1,4 @@
-import isEmail from 'validator';
+import { isEmail } from 'validator';
 
 const show_error_messages = 'show-error-message';
 
@@ -14,7 +14,19 @@ form.addEventListener('submit', function (event: Event) {
   hideErrorMessages(this);
   checkForEmptyFields(username, email, password, password2);
   checkEmail(email);
+  checkEqualPasswords(password, password2);
+  if (shouldSenfForm(this)) console.log('formulario enviado'); // form.submit();
 });
+
+function checkEqualPasswords(
+  password: HTMLInputElement,
+  password2: HTMLInputElement,
+) {
+  if (password.value !== password2.value) {
+    showErrorMessage(password, 'Senhas não batem');
+    showErrorMessage(password2, 'Senhas não batem');
+  }
+}
 
 function checkEmail(input: HTMLInputElement): void {
   if (!isEmail(input.value)) showErrorMessage(input, 'Email invaliddo');
@@ -41,5 +53,14 @@ function showErrorMessage(input: HTMLInputElement, msg: string): void {
   formFields.classList.add(show_error_messages);
 }
 
-showErrorMessage(username, 'MENSAGEM');
-hideErrorMessages(form);
+// showErrorMessage(username, 'MENSAGEM');
+// hideErrorMessages(form);
+
+function shouldSenfForm(form: HTMLElement): boolean {
+  let send = true;
+
+  form.querySelectorAll('.' + show_error_messages).forEach(() => {
+    send = false;
+  });
+  return send;
+}
