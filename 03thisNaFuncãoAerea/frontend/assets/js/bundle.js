@@ -17,13 +17,14 @@ const username = document.querySelector('.username');
 const email = document.querySelector('.email');
 const password = document.querySelector('.password');
 const password2 = document.querySelector('.password2');
-form.addEventListener('submit', function (event) {
+form.addEventListener('submit', (event) => {
     event.preventDefault();
-    hideErrorMessages(this);
+    const target = event.target;
+    hideErrorMessages(target);
     checkForEmptyFields(username, email, password, password2);
     checkEmail(email);
     checkEqualPasswords(password, password2);
-    if (shouldSenfForm(this))
+    if (shouldSenfForm(target))
         console.log('formulario enviado'); // form.submit();
 });
 function checkEqualPasswords(password, password2) {
@@ -7586,6 +7587,13 @@ var exports = __webpack_exports__;
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 __webpack_require__(/*! ./formulario */ "./src/formulario.ts");
+// export function funcao(this: Date, nome: string, age: number): void {
+//   console.log(this);
+//   console.log(nome, age);
+// }
+// funcao.call(new Date(), 'Tar', 30);
+// // coloca dentro de um array
+// funcao.apply(new Date(), ['Tar', 30]);
 
 })();
 
